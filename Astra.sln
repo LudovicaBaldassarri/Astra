@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{3CCE5F3E-AF76-E098-BA8E-28F7BBBA3F92}") = "Astra", "Assembly-CSharp-firstpass.csproj", "{B8133304-F091-83C0-9CDD-FA7B08D7793C}"
+EndProject
+Project("{3CCE5F3E-AF76-E098-BA8E-28F7BBBA3F92}") = "Astra", "Assembly-CSharp-Editor-firstpass.csproj", "{D859A2C1-634C-929E-E753-1DBE77432096}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8133304-F091-83C0-9CDD-FA7B08D7793C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8133304-F091-83C0-9CDD-FA7B08D7793C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8133304-F091-83C0-9CDD-FA7B08D7793C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8133304-F091-83C0-9CDD-FA7B08D7793C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D859A2C1-634C-929E-E753-1DBE77432096}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D859A2C1-634C-929E-E753-1DBE77432096}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D859A2C1-634C-929E-E753-1DBE77432096}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D859A2C1-634C-929E-E753-1DBE77432096}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

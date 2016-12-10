@@ -5,9 +5,9 @@ using UnityEngine;
 public class Lumen : MonoBehaviour {
 
 	// Modificabili dall'esterno
-	public float motion_height = 0.2f;
-	public float motion_speed = 0.02f;
-	public float rotaion_speed = 0.02f;
+	public float motion_height = 0.4f;
+	public float motion_speed = 0.2f;
+	public float rotation_speed = 4f;
 
 	// Privati
 	private float relative_height;
@@ -23,18 +23,26 @@ public class Lumen : MonoBehaviour {
 	void Update () {
 
 		// Rotazione sul proprio asse verticale
-		float rot = rotaion_speed * Time.deltaTime;
-		this.gameObject.transform.Rotate (new Vector3 (0f, 0f, rot));
+		float rot = rotation_speed * 100 * Time.deltaTime;
+		transform.Rotate (new Vector3 (0f, 0f, rot));
 
 		// Floating lungo l'asse verticale
-		if (Mathf.Abs(relative_height) >= motion_height) {
-			// Inverti il senso di floating
-			sign *= -1;
-		} 
 
-		float trasl = sign * Time.deltaTime * motion_speed;
+		float trasl;
+
+		// Inversione del floating
+		if (Mathf.Abs (relative_height) > motion_height) {
+			sign *= -1;
+			trasl = sign * (Mathf.Abs(relative_height) - motion_height);
+
+		} else {
+			trasl = sign * Time.deltaTime * motion_speed;
+		}
+			
+		// Aggiornamento dell'altezza relativa
 		relative_height += trasl;
 
+		// Traslazione
 		this.gameObject.transform.Translate (new Vector3 (0f, 0f, trasl));
 	}
 }

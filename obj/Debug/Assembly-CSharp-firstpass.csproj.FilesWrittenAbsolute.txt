@@ -19,3 +19,5 @@
 /Users/Shared/Unity/Astra/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/Shared/Unity/Astra/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/Shared/Unity/Astra/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/Shared/Unity/Astra/Temp/bin/Debug/UnityEngine.Advertisements.dll
+/Users/Shared/Unity/Astra/Temp/bin/Debug/UnityEngine.Purchasing.dll

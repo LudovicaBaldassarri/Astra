@@ -4,31 +4,37 @@ using UnityEngine;
 
 public class Lumen : MonoBehaviour {
 
-	public float limit = 0.2f;
-	public float increment = 0.001f;
-	// float float_speed = 0.2;
+	// Modificabili dall'esterno
+	public float motion_height = 0.2f;
+	public float motion_speed = 0.02f;
+	public float rotaion_speed = 0.02f;
 
-	private float float_increment;
-	private float float_sign;
+	// Privati
+	private float relative_height;
+	private float sign;			// 1 == up, -1 == down
 
 	// Use this for initialization
 	void Start () {
-		float_increment = 0f;
-		float_sign = 1f;
+		relative_height = 0;
+		sign = 1;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		this.gameObject.transform.Rotate (new Vector3 (0f, 0f, 1f));
 
-		if (Mathf.Abs (float_increment) >= limit) {
+		// Rotazione sul proprio asse verticale
+		float rot = rotaion_speed * Time.deltaTime;
+		this.gameObject.transform.Rotate (new Vector3 (0f, 0f, rot));
+
+		// Floating lungo l'asse verticale
+		if (Mathf.Abs(relative_height) >= motion_height) {
 			// Inverti il senso di floating
-			float_sign *= -1f;
-		}
+			sign *= -1;
+		} 
 
-		float incr = float_sign * increment;
-		float_increment += incr;
+		float trasl = sign * Time.deltaTime * motion_speed;
+		relative_height += trasl;
 
-		this.gameObject.transform.Translate (new Vector3 (0f,0f,incr));
+		this.gameObject.transform.Translate (new Vector3 (0f, 0f, trasl));
 	}
 }

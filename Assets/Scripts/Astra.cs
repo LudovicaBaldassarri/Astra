@@ -21,7 +21,7 @@ public class Astra : MonoBehaviour {
 
 		if (Physics.Raycast (ray, out hit, 100.0f)) {
 			print ("Found object (" + hit.collider.gameObject.name + ") distance: " + hit.distance);
-			Debug.DrawRay (transform.position, forward);
+			Debug.DrawRay (transform.position, transform.forward);
 		}
 	}
 }

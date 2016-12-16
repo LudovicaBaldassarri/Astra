@@ -17,11 +17,10 @@ public class Astra : MonoBehaviour {
 	void FixedUpdate() {
 		RaycastHit hit;
 		Ray ray = new Ray (transform.position, transform.forward);
-
+		Debug.DrawRay (transform.position, transform.forward*10, new Color(255,0,0));
 
 		if (Physics.Raycast (ray, out hit, 100.0f)) {
 			print ("Found object (" + hit.collider.gameObject.name + ") distance: " + hit.distance);
-			Debug.DrawRay (transform.position, transform.forward);
 		}
 	}
 }

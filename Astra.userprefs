@@ -1,10 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Astra.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Nav.cs">
     <Files>
-      <File FileName="Assets/Scripts/Astra.cs" Line="20" Column="58" />
-      <File FileName="Assets/Scripts/EnergySphere.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Lumen.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Astra.cs" Line="20" Column="58" />
+      <File FileName="Assets/Scripts/EnergySphere.cs" Line="17" Column="22" />
+      <File FileName="Assets/Scripts/Nav.cs" Line="41" Column="80" />
       <File FileName="Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/FirstPersonController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>

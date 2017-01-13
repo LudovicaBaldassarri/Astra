@@ -1,27 +1,32 @@
 fileFormatVersion: 2
-guid: 83bb91bfa8cf74988899e3b584869f38
-timeCreated: 1482592394
+guid: 2da3746b27aed468a833e19f366d19b7
+timeCreated: 1484303161
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: Nav_Corpo
-    100004: Nav_portaDx
-    100006: Nav_PortaSx
-    400000: //RootNode
-    400002: Nav_Corpo
-    400004: Nav_portaDx
-    400006: Nav_PortaSx
-    2300000: Nav_Corpo
-    2300002: Nav_portaDx
-    2300004: Nav_PortaSx
-    3300000: Nav_Corpo
-    3300002: Nav_portaDx
-    3300004: Nav_PortaSx
-    4300000: Nav_PortaSx
-    4300002: Nav_portaDx
-    4300004: Nav_Corpo
+    100000: Bottone
+    100002: //RootNode
+    100004: Nav_Corpo
+    100006: Nav_portaD
+    100008: Nav_portaS
+    400000: Bottone
+    400002: //RootNode
+    400004: Nav_Corpo
+    400006: Nav_portaD
+    400008: Nav_portaS
+    2300000: Bottone
+    2300002: Nav_Corpo
+    2300004: Nav_portaD
+    2300006: Nav_portaS
+    3300000: Bottone
+    3300002: Nav_Corpo
+    3300004: Nav_portaD
+    3300006: Nav_portaS
+    4300000: Nav_Corpo
+    4300002: Nav_portaS
+    4300004: Bottone
+    4300006: Nav_portaD
   materials:
     importMaterials: 1
     materialName: 0

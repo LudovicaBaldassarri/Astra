@@ -7,6 +7,8 @@ Project("{3CCE5F3E-AF76-E098-BA8E-28F7BBBA3F92}") = "Astra", "Assembly-CSharp.cs
 EndProject
 Project("{3CCE5F3E-AF76-E098-BA8E-28F7BBBA3F92}") = "Astra", "Assembly-CSharp-Editor-firstpass.csproj", "{D859A2C1-634C-929E-E753-1DBE77432096}"
 EndProject
+Project("{3CCE5F3E-AF76-E098-BA8E-28F7BBBA3F92}") = "Astra", "Assembly-CSharp-Editor.csproj", "{1710D699-56AC-2887-C999-979431149808}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{D859A2C1-634C-929E-E753-1DBE77432096}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D859A2C1-634C-929E-E753-1DBE77432096}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D859A2C1-634C-929E-E753-1DBE77432096}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1710D699-56AC-2887-C999-979431149808}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1710D699-56AC-2887-C999-979431149808}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1710D699-56AC-2887-C999-979431149808}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1710D699-56AC-2887-C999-979431149808}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

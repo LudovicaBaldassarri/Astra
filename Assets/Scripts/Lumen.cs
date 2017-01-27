@@ -17,6 +17,8 @@ public class Lumen : MonoBehaviour {
 	void Start () {
 		relative_height = 0;
 		sign = 1;
+
+		iTween.MoveTo (gameObject, iTween.Hash ("path", iTweenPath.GetPath ("test_path"), "time", 10, "easetype", iTween.EaseType.easeInOutSine));
 	}
 	
 	// Update is called once per frame

@@ -1,10 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/livello1.unity
+- path: Assets/Scenes/menu.unity
   isLoaded: 1
   isActive: 1
-- path: Assets/Scenes/livello2.unity
-  isLoaded: 0
-  isActive: 0
-- path: Assets/Scenes/livello3.unity
-  isLoaded: 0
-  isActive: 0

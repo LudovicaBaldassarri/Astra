@@ -49,6 +49,7 @@
      <Compile Include="Assets\Pixelplacement\iTweenPath\iTweenPath.cs" />
      <Compile Include="Assets\Scripts\Astra.cs" />
      <Compile Include="Assets\Scripts\ButtonManager.cs" />
+     <Compile Include="Assets\Scripts\Death.cs" />
      <Compile Include="Assets\Scripts\EnergySphere.cs" />
      <Compile Include="Assets\Scripts\Lumen.cs" />
      <Compile Include="Assets\Scripts\MoveScene.cs" />

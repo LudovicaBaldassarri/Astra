@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class EnergySphere : MonoBehaviour {
 
+	public delegate void EnergySphereAction();
+	public static event EnergySphereAction onTaken;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -15,7 +18,8 @@ public class EnergySphere : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider collision) {
-		Debug.Log ("Collisione Energia!");
+
 		gameObject.SetActive (false);
+		onTaken ();
 	}
 }

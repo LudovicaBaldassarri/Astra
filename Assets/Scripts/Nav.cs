@@ -8,9 +8,15 @@ public class Nav : MonoBehaviour {
 	private bool anim = false;
 	private float degrees = 0;
 
+	private Astra astra;
+
 	// Use this for initialization
 	void Start () {
+		Astra.onNAVButtonPressed += NAVButtonPressed;
+	}
 
+	void NAVButtonPressed() {
+		anim = true;
 	}
 	
 	// Update is called once per frame

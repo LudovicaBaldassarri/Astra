@@ -8,7 +8,10 @@ public class Astra : MonoBehaviour {
 	public float oxigenLevel = 100;
 	public float oxigenLossPerSecond = 0;
 
-	private EnergySphere energySphere;
+	private string lastFocusedObject = "";
+
+	public delegate void AstraAction();
+	public static event AstraAction onNAVButtonPressed;
 
 	// Use this for initialization
 	void Start () {
@@ -41,8 +44,18 @@ public class Astra : MonoBehaviour {
 			// print ("Found object (" + hit.collider.gameObject.name + ") distance: " + hit.distance);
 
 			if (hit.collider.gameObject.name == "e_potassio_004") {
-				print("NEWS: Ho trovato il potassio!");
+				print ("ASTRA: Ho trovato il potassio!");
+				lastFocusedObject = "e_potassio_004";
+			} else if (hit.collider.gameObject.name == "Bottone") {
+				print ("ASTRA: Ho trovato un bottone!");
+				lastFocusedObject = "Bottone";
+				if (Input.GetMouseButtonDown (0)) {	// MOUSE LEFT CLICK
+					onNAVButtonPressed();
+				}
+			} else {
+				lastFocusedObject = "";
 			}
 		}
 	}
+
 }

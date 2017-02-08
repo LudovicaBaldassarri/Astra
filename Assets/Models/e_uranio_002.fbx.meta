@@ -1,27 +1,15 @@
 fileFormatVersion: 2
-guid: d65079b04616d4555bae83b96cca2964
-timeCreated: 1482999773
+guid: 1f54b4745559b46da8167451fc79e102
+timeCreated: 1486548860
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Boundaries
-    100002: Montagne
-    100004: Sentiero
-    100006: //RootNode
-    400000: Boundaries
-    400002: Montagne
-    400004: Sentiero
-    400006: //RootNode
-    2300000: Boundaries
-    2300002: Montagne
-    2300004: Sentiero
-    3300000: Boundaries
-    3300002: Montagne
-    3300004: Sentiero
-    4300000: Sentiero
-    4300002: Boundaries
-    4300004: Montagne
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: o_uranio_lowpoly_002
   materials:
     importMaterials: 1
     materialName: 0

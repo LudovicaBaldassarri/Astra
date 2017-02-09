@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 7e7c39f3b92224f65a38273beddb45d8
-timeCreated: 1486547089
+guid: c53f9bfb317b248ca94db9194954ff38
+timeCreated: 1486656594
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -23,9 +23,9 @@ ModelImporter:
     3300002: Montagne
     3300004: Sassi
     3300006: Sentiero
-    4300000: Sentiero
-    4300002: Boundaries
-    4300004: Montagne
+    4300000: Montagne
+    4300002: Sentiero
+    4300004: Boundaries
     4300006: Sassi
   materials:
     importMaterials: 1

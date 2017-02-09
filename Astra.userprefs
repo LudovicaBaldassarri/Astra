@@ -1,13 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Death.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Montacarichi.cs">
     <Files>
-      <File FileName="Assets/Scripts/Death.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Astra.cs" Line="52" Column="60" />
+      <File FileName="Assets/Scripts/Astra.cs" Line="62" Column="6" />
       <File FileName="Assets/Scripts/Conversation.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Lumen.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/EnergySphere.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Nav.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Montacarichi.cs" Line="28" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

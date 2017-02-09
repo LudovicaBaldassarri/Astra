@@ -10,6 +10,7 @@ public class Astra : MonoBehaviour {
 
 	public delegate void AstraAction();
 	public static event AstraAction onNAVButtonPressed;
+	public static event AstraAction onButtonMontacarichiPressed;
 
 	// Use this for initialization
 	void Start () {
@@ -42,14 +43,24 @@ public class Astra : MonoBehaviour {
 			// print ("Found object (" + hit.collider.gameObject.name + ") distance: " + hit.distance);
 
 			if (hit.collider.gameObject.tag == "Elemento") {
+
 				print ("ASTRA: Elemento " + hit.collider.gameObject.name + " trovato!");
-			} else if (hit.collider.gameObject.name == "Bottone") {
-				print ("ASTRA: Ho trovato un bottone!");
+			
+			} else if (hit.collider.gameObject.tag == "BottoneNav") {
+
+				print ("ASTRA: Ho trovato il bottone di NAV!");
 				if (Input.GetMouseButtonDown (0)) {	// MOUSE LEFT CLICK
 					onNAVButtonPressed();
 				}
-			} else {
-				// Aggiungere altri tipi di oggetti con cui interagire!
+
+			} else if (hit.collider.gameObject.tag == "BottoneMontacarichi"){
+
+				print ("ASTRA: Ho trovato il bottone del montacarichi!");
+
+				if (Input.GetMouseButtonDown (0)) {	// MOUSE LEFT CLICK
+					onButtonMontacarichiPressed();
+				}
+
 			}
 		}
 	}

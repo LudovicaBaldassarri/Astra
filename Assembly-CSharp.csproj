@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\Death.cs" />
      <Compile Include="Assets\Scripts\EnergySphere.cs" />
      <Compile Include="Assets\Scripts\Lumen.cs" />
+     <Compile Include="Assets\Scripts\Montacarichi.cs" />
      <Compile Include="Assets\Scripts\MoveScene.cs" />
      <Compile Include="Assets\Scripts\Nav.cs" />
      <Compile Include="Assets\VIDE\Data\MiniJSON_VIDE.cs" />

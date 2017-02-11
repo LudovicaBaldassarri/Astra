@@ -43,9 +43,14 @@ public class Nav : MonoBehaviour {
 //					this.transform.GetChild(i).transform.Rotate(new Vector3(0.0f,0.0f,sign*1f));
 //				}
 //			}
+			this.gameObject.transform.FindChild("Nav_portaD").transform.Rotate(new Vector3(0.0f,0.0f,sign*-1f));
+			this.gameObject.transform.FindChild("Nav_portaS").transform.Rotate(new Vector3(0.0f,0.0f,sign*1f));
+
+			/*
 			this.transform.GetChild(1).transform.Rotate(new Vector3(0.0f,0.0f,sign*-1f));
 			this.transform.GetChild(2).transform.Rotate(new Vector3(0.0f,0.0f,sign*1f));
 			this.transform.GetChild(3).transform.Rotate(new Vector3(0.0f,0.0f,sign*1f));
+			*/
 
 			if (degrees >= 90 || degrees <= 0) {
 				anim = false;

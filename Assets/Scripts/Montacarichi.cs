@@ -16,6 +16,7 @@ public class Montacarichi : MonoBehaviour {
 
 	void MontacarichiButtonPressed() {
 		goDown = true;
+		this.gameObject.transform.FindChild ("Boundaries").gameObject.GetComponent<MeshCollider> ().enabled = true;
 	}
 
 	// Update is called once per frame

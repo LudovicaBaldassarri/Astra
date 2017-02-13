@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Astra : MonoBehaviour {
 
 	public int energySphereCounter = 0;
-	public float oxigenLevel = 100;
+	public float currentOxigen;
+	public float startOxigen = 100;
 	public float oxigenLossPerSecond = 0;
+	public Slider oxigenSlider;
 
 	public delegate void AstraAction();
 	public static event AstraAction onNAVButtonPressed;
@@ -16,14 +19,24 @@ public class Astra : MonoBehaviour {
 	void Start () {
 		EnergySphere.onTaken += IncrementEnergySphereCount;	
 	}
+
+	void Awake () {
+		currentOxigen = startOxigen;
+	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		if (oxigenLevel < 0)
+		if (currentOxigen == 0) {
 			print ("ATTENZIONE: OSSIGENO TERMINATO!!!!");
-		else
-			oxigenLevel -= oxigenLossPerSecond * Time.deltaTime;
+		} else {
+			currentOxigen -= oxigenLossPerSecond * Time.deltaTime;
+
+			if (currentOxigen < 0)
+				currentOxigen = 0;
+
+			oxigenSlider.value = currentOxigen;
+		}
 
 	}
 

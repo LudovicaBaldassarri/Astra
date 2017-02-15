@@ -10,6 +10,7 @@ public class Astra : MonoBehaviour {
 	public float startOxigen = 100;
 	public float oxigenLossPerSecond = 0;
 	public Slider oxigenSlider;
+	public Text sphereCounter;
 
 	public delegate void AstraAction();
 	public static event AstraAction onNAVButtonPressed;
@@ -42,7 +43,7 @@ public class Astra : MonoBehaviour {
 
 	void IncrementEnergySphereCount() {
 		energySphereCounter++;
-		print ("Numero di sfere di energia: " + energySphereCounter);
+		sphereCounter.text = energySphereCounter.ToString ();
 	}
 
 	void FixedUpdate() {

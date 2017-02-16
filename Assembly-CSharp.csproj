@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\ButtonManager.cs" />
      <Compile Include="Assets\Scripts\Conversation.cs" />
      <Compile Include="Assets\Scripts\Death.cs" />
+     <Compile Include="Assets\Scripts\DontDestroy.cs" />
      <Compile Include="Assets\Scripts\EnergySphere.cs" />
      <Compile Include="Assets\Scripts\Lumen.cs" />
      <Compile Include="Assets\Scripts\Minimappa.cs" />

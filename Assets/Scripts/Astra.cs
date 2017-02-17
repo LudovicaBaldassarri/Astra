@@ -58,18 +58,26 @@ public class Astra : MonoBehaviour {
 
 			if (hit.collider.gameObject.tag == "Elemento") {
 
-				print ("ASTRA: Elemento " + hit.collider.gameObject.name + " trovato!");
+				// Testo per debug
+				//print ("ASTRA: Elemento " + hit.collider.gameObject.name + " trovato!");
+
+				if (Input.GetMouseButtonDown (0)) {	// MOUSE LEFT CLICK
+					hit.collider.gameObject.transform.FindChild("didascalia").gameObject.SetActive(true);
+				}
 			
 			} else if (hit.collider.gameObject.tag == "BottoneNav") {
 
-				print ("ASTRA: Ho trovato il bottone di NAV!");
+				// Testo per debug
+				//print ("ASTRA: Ho trovato il bottone di NAV!");
+
 				if (Input.GetMouseButtonDown (0)) {	// MOUSE LEFT CLICK
 					onNAVButtonPressed();
 				}
 
 			} else if (hit.collider.gameObject.tag == "BottoneMontacarichi"){
 
-				print ("ASTRA: Ho trovato il bottone del montacarichi!");
+				// Testo per debug
+				//print ("ASTRA: Ho trovato il bottone del montacarichi!");
 
 				if (Input.GetMouseButtonDown (0)) {	// MOUSE LEFT CLICK
 					onButtonMontacarichiPressed();

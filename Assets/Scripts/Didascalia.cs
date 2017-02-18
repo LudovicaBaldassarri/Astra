@@ -6,7 +6,7 @@ public class Didascalia : MonoBehaviour {
 
 	public GameObject astra;
 
-	public float scaleSpeed = 1; 
+	public float scaleSpeed = 4; 
 
 	private bool animate = false;
 	private float xScale;
@@ -20,8 +20,10 @@ public class Didascalia : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		transform.LookAt (astra.transform);
-		transform.rotation = Quaternion.Euler (0, transform.rotation.eulerAngles.y, 90);
+		transform.rotation = Quaternion.Euler (-90, transform.rotation.eulerAngles.y, 90);
+
 
 		if (animate) {
 			xScale += scaleSpeed * Time.deltaTime;
@@ -30,8 +32,8 @@ public class Didascalia : MonoBehaviour {
 
 			if (xScale > 2)
 				xScale = 2;
-			if (yScale > 3.3) {
-				yScale = 3.3f;
+			if (yScale > 2) {
+				yScale = 2;
 				animate = false;
 			}
 			if (zScale > 2)
@@ -39,10 +41,6 @@ public class Didascalia : MonoBehaviour {
 
 			this.transform.localScale = new Vector3 (xScale, yScale, zScale);
 		}
-
-		transform.LookAt (astra.transform);
-		transform.rotation = Quaternion.Euler (0, transform.rotation.eulerAngles.y, 90);
-
 	}
 		
 

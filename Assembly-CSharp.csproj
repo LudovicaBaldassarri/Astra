@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\DontDestroy.cs" />
      <Compile Include="Assets\Scripts\EnergySphere.cs" />
      <Compile Include="Assets\Scripts\Lumen.cs" />
+     <Compile Include="Assets\Scripts\LumenStages.cs" />
      <Compile Include="Assets\Scripts\Minimappa.cs" />
      <Compile Include="Assets\Scripts\Montacarichi.cs" />
      <Compile Include="Assets\Scripts\MoveScene.cs" />

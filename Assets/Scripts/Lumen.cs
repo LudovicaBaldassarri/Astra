@@ -25,8 +25,4 @@ public class Lumen : MonoBehaviour {
 		transform.Rotate (new Vector3 (0f, 0f, rot));
 
 	}
-
-	void OnTriggerEnter() {
-		iTween.MoveTo (gameObject, iTween.Hash ("path", iTweenPath.GetPath ("LumenIntro"), "time", 5, "easetype", iTween.EaseType.easeInOutSine));
-	}
 }

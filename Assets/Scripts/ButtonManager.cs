@@ -9,4 +9,9 @@ public class ButtonManager : MonoBehaviour {
 
 		SceneManager.LoadScene (newGameLevel);
 	}
+
+	public void CreditsBtn(GameObject nomiCreatori) {
+		bool currentState = nomiCreatori.activeSelf;
+		nomiCreatori.SetActive (!currentState);
+	}
 }

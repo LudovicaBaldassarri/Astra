@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bfe87a08d8ce7441895fee54fe97f197
+timeCreated: 1487610926
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - astra: {fileID: 1238919708736470, guid: 5d0ca42e1daf948138b40af26ab08ef1, type: 2}
+  - particle_box: {fileID: 1576201563640292, guid: 96c0171421139414d82bbc03a941f56f,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

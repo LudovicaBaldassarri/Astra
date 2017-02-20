@@ -60,6 +60,9 @@
      <Compile Include="Assets\Scripts\Montacarichi.cs" />
      <Compile Include="Assets\Scripts\MoveScene.cs" />
      <Compile Include="Assets\Scripts\Nav.cs" />
+     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
+     <Compile Include="Assets\Scripts\OxigenRefill.cs" />
+     <Compile Include="Assets\Scripts\Pausa.cs" />
      <Compile Include="Assets\VIDE\Data\MiniJSON_VIDE.cs" />
      <Compile Include="Assets\VIDE\Data\VIDE_EditorDB.cs" />
      <Compile Include="Assets\VIDE\Examples\Example1\examplePlayer.cs" />

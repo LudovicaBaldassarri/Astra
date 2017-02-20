@@ -16,13 +16,11 @@ public class Astra : MonoBehaviour {
 	public static event AstraAction onNAVButtonPressed;
 	public static event AstraAction onButtonMontacarichiPressed;
 
-	// Use this for initialization
-	void Start () {
-		EnergySphere.onTaken += IncrementEnergySphereCount;	
-	}
-
 	void Awake () {
 		currentOxigen = startOxigen;
+		EnergySphere.onTaken += IncrementEnergySphereCount;
+		OxigenRefill.onInsideNav += RefillOxigen;
+		NewBehaviourScript.onOxigenDamage += OxigenDamage;
 	}
 	
 	// Update is called once per frame
@@ -30,15 +28,28 @@ public class Astra : MonoBehaviour {
 
 		if (currentOxigen == 0) {
 			print ("ATTENZIONE: OSSIGENO TERMINATO!!!!");
+			// MUORI QUI!!!
+
 		} else {
 			currentOxigen -= oxigenLossPerSecond * Time.deltaTime;
 
-			if (currentOxigen < 0)
+			if (currentOxigen < 0) {
 				currentOxigen = 0;
+			}
 
 			oxigenSlider.value = currentOxigen;
 		}
 
+	}
+
+	void RefillOxigen() {
+		currentOxigen = 100;
+	}
+
+	void OxigenDamage() {
+		currentOxigen -= 2;
+		if (currentOxigen < 0)
+			currentOxigen = 0;
 	}
 
 	void IncrementEnergySphereCount() {

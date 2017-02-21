@@ -1,8 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Nav : MonoBehaviour {
+
+	public AudioClip doorsActionSound;
 
 	private bool closed = true;
 	private bool anim = false;
@@ -61,5 +64,6 @@ public class Nav : MonoBehaviour {
 
 	void OnTriggerEnter(Collider collision) {
 		anim = true;
+		this.GetComponent<AudioSource> ().PlayOneShot (doorsActionSound);
 	}
 }

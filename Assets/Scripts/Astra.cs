@@ -11,24 +11,36 @@ public class Astra : MonoBehaviour {
 	public float oxigenLossPerSecond = 0;
 	public Slider oxigenSlider;
 	public Text sphereCounter;
+	public AudioClip energyTakenSound;
+	public AudioClip didascaliaSound;
+	public AudioClip deathSound;
 
 	public delegate void AstraAction();
 	public static event AstraAction onNAVButtonPressed;
 	public static event AstraAction onButtonMontacarichiPressed;
+
+	private Vector3 lastCheckpoint;
 
 	void Awake () {
 		currentOxigen = startOxigen;
 		EnergySphere.onTaken += IncrementEnergySphereCount;
 		OxigenRefill.onInsideNav += RefillOxigen;
 		NewBehaviourScript.onOxigenDamage += OxigenDamage;
+		lastCheckpoint = this.transform.parent.transform.position;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
 		if (currentOxigen == 0) {
-			print ("ATTENZIONE: OSSIGENO TERMINATO!!!!");
-			// MUORI QUI!!!
+
+			//print ("ATTENZIONE: OSSIGENO TERMINATO!!!!");
+
+			if(deathSound != null)
+				this.GetComponent<AudioSource> ().PlayOneShot (deathSound);
+
+			this.transform.parent.transform.position = lastCheckpoint;
+			currentOxigen = 100;
 
 		} else {
 			currentOxigen -= oxigenLossPerSecond * Time.deltaTime;
@@ -40,6 +52,9 @@ public class Astra : MonoBehaviour {
 			oxigenSlider.value = currentOxigen;
 		}
 
+		if (this.transform.parent.transform.position.y < -2)
+			currentOxigen = 100;
+
 	}
 
 	void RefillOxigen() {
@@ -47,12 +62,13 @@ public class Astra : MonoBehaviour {
 	}
 
 	void OxigenDamage() {
-		currentOxigen -= 2;
+		currentOxigen -= 10;
 		if (currentOxigen < 0)
 			currentOxigen = 0;
 	}
 
 	void IncrementEnergySphereCount() {
+		this.GetComponent<AudioSource> ().PlayOneShot (energyTakenSound);
 		energySphereCounter++;
 		sphereCounter.text = energySphereCounter.ToString ();
 	}
@@ -74,6 +90,7 @@ public class Astra : MonoBehaviour {
 
 				if (Input.GetMouseButtonDown (0)) {	// MOUSE LEFT CLICK
 					hit.collider.gameObject.transform.FindChild("didascalia").gameObject.SetActive(true);
+					this.GetComponent<AudioSource> ().PlayOneShot (didascaliaSound);
 				}
 			
 			} else if (hit.collider.gameObject.tag == "BottoneNav") {
@@ -82,7 +99,9 @@ public class Astra : MonoBehaviour {
 				//print ("ASTRA: Ho trovato il bottone di NAV!");
 
 				if (Input.GetMouseButtonDown (0)) {	// MOUSE LEFT CLICK
+					this.GetComponent<AudioSource> ().PlayOneShot (didascaliaSound);
 					onNAVButtonPressed();
+					lastCheckpoint = this.transform.parent.transform.position;
 				}
 
 			} else if (hit.collider.gameObject.tag == "BottoneMontacarichi"){
@@ -91,6 +110,7 @@ public class Astra : MonoBehaviour {
 				//print ("ASTRA: Ho trovato il bottone del montacarichi!");
 
 				if (Input.GetMouseButtonDown (0)) {	// MOUSE LEFT CLICK
+					this.GetComponent<AudioSource> ().PlayOneShot (didascaliaSound);
 					onButtonMontacarichiPressed();
 				}
 

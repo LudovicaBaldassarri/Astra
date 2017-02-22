@@ -1,0 +1,5 @@
+Ciao, sono NAV, la tua assistente virtuale.
+Ti volevo informare che il teletrasporto e' riuscito con successo.
+Ti metto in contatto con la base.
+Intanto analizziamo le tue funzioni motorie:
+Prova a muoverti con W,A,S,D.

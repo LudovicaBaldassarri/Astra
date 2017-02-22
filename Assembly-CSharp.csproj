@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Pixelplacement\iTweenPath\iTweenPath.cs" />
+     <Compile Include="Assets\Scripts\ActivateTextAtLineNav.cs" />
+     <Compile Include="Assets\Scripts\ActivateTextAtLineNonno.cs" />
      <Compile Include="Assets\Scripts\Astra.cs" />
      <Compile Include="Assets\Scripts\ButtonManager.cs" />
      <Compile Include="Assets\Scripts\Conversation.cs" />
@@ -65,6 +67,8 @@
      <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\OxigenRefill.cs" />
      <Compile Include="Assets\Scripts\Pausa.cs" />
+     <Compile Include="Assets\Scripts\TextBoxManagerNav.cs" />
+     <Compile Include="Assets\Scripts\TextBoxManagerNonno.cs" />
      <Compile Include="Assets\VIDE\Data\MiniJSON_VIDE.cs" />
      <Compile Include="Assets\VIDE\Data\VIDE_EditorDB.cs" />
      <Compile Include="Assets\VIDE\Examples\Example1\examplePlayer.cs" />
@@ -73,15 +77,35 @@
      <Compile Include="Assets\VIDE\Examples\Example2\minUIExample.cs" />
      <Compile Include="Assets\VIDE\VIDE_Assign.cs" />
      <Compile Include="Assets\VIDE\VIDE_Data.cs" />
+     <None Include="Assets\Testi\Prova Testo Nonno.txt" />
+     <None Include="Assets\Dialoghi\Livello3\001_ingresso_canyon_Nonno.txt" />
+     <None Include="Assets\Dialoghi\Livello1\004_spiegazione_elemento_Nonno.txt" />
+     <None Include="Assets\Dialoghi\Livello3\002_pericolo_rilevato_Nav.txt" />
+     <None Include="Assets\Dialoghi\Livello1\007_spiegazione_ossigeno_Nonno.txt" />
+     <None Include="Assets\Dialoghi\Livello2\003_reazione_elio3_Nonno.txt" />
+     <None Include="Assets\Dialoghi\Livello2\004_reazione_ossigeno_Nonno.txt" />
+     <None Include="Assets\Dialoghi\Livello1\008_lumen_trovata_Nav.txt" />
+     <None Include="Assets\Dialoghi\Livello1\000_iniziale_Nav.txt" />
+     <None Include="Assets\Dialoghi\Livello2\001_reazione_raggi_Nonno.txt" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
      <None Include="Assets\VIDE\license.txt" />
      <None Include="Assets\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
+     <None Include="Assets\Dialoghi\Livello1\006_spiegazione_cratere_Nonno.txt" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
+     <None Include="Assets\Dialoghi\Livello1\002_spiegazione_luna_Nav.txt" />
+     <None Include="Assets\Testi\Prova Testo Nav.txt" />
      <None Include="Assets\VIDE\Resources\ReadMe.txt" />
+     <None Include="Assets\Dialoghi\Livello1\009_lumen_trovata_Nonno.txt" />
      <None Include="Assets\Standard Assets\Characters\ThirdPersonCharacter\ThirdPersonCharacterGuidelines.txt" />
+     <None Include="Assets\Dialoghi\Livello3\000_iniziale_Nav.txt" />
+     <None Include="Assets\Dialoghi\Livello3\003_pericolo_rilevato_Nonno.txt" />
      <None Include="Assets\Standard Assets\Characters\FirstPersonCharacter\FirstPersonCharacterGuidelines.txt" />
+     <None Include="Assets\Dialoghi\Livello1\005_reazione_primo_elemento_trovato_Nonno.txt" />
+     <None Include="Assets\Dialoghi\Livello2\000_iniziale_Nav.txt" />
+     <None Include="Assets\Dialoghi\Livello3\004_scoperta_grotta_Nonno.txt" />
      <None Include="Assets\Standard Assets\Characters\RollerBall\RollerBallGuidelines.txt" />
+     <None Include="Assets\Dialoghi\Livello1\001_iniziale_Nonno.txt" />
      <None Include="Assets\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
      <None Include="Assets\Audio\FootstepsSounds\FootstepsSoundsCarpetPackInfo.txt" />
  <Reference Include="UnityEngine.UI">

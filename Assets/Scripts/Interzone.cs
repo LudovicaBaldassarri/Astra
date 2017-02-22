@@ -19,10 +19,10 @@ public class Interzone : MonoBehaviour {
 
 		if (sfereRaccolte >= numeroSfere) {
 			prossimoLivello = nomeLivelloSuccessivo;
-			this.gameObject.GetComponent<Text>().text = "Hai raccolto tutte le sfere! Premi invio per il livello successivo.";
+			this.gameObject.GetComponent<Text>().text = "Hai fatto il pieno di energia per NAV!\n Premi invio per il livello successivo.";
 		} else {
 			prossimoLivello = nomeLivelloPrecedente;
-			this.gameObject.GetComponent<Text>().text = "Non hai raccolto tutte le sfere! Premi invio per rigiocare il livello.";
+			this.gameObject.GetComponent<Text>().text = "NAV non ha energia senza sfere.\n Premi invio e cerca di raccoglierle tutte.";
 		}
 	
 	}

@@ -63,7 +63,14 @@ public class Nav : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider collision) {
-		anim = true;
-		this.GetComponent<AudioSource> ().PlayOneShot (doorsActionSound);
+
+		if (collision.gameObject.tag == "Player") {
+
+			// DEBUG
+			//print("Ok il prezzo è giusto!");
+
+			anim = true;
+			this.GetComponent<AudioSource> ().PlayOneShot (doorsActionSound);
+		}
 	}
 }

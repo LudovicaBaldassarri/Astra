@@ -53,7 +53,9 @@
      <Compile Include="Assets\Scripts\Death.cs" />
      <Compile Include="Assets\Scripts\Didascalia.cs" />
      <Compile Include="Assets\Scripts\DontDestroy.cs" />
+     <Compile Include="Assets\Scripts\EasterEggCollider.cs" />
      <Compile Include="Assets\Scripts\EnergySphere.cs" />
+     <Compile Include="Assets\Scripts\Interzone.cs" />
      <Compile Include="Assets\Scripts\Lumen.cs" />
      <Compile Include="Assets\Scripts\LumenStages.cs" />
      <Compile Include="Assets\Scripts\Minimappa.cs" />

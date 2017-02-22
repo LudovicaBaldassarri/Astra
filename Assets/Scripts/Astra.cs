@@ -27,8 +27,14 @@ public class Astra : MonoBehaviour {
 		OxigenRefill.onInsideNav += RefillOxigen;
 		NewBehaviourScript.onOxigenDamage += OxigenDamage;
 		lastCheckpoint = this.transform.parent.transform.position;
+		PlayerPrefs.SetString ("bombola", "notfound");
+		PlayerPrefs.SetInt ("energy", energySphereCounter);
 	}
-	
+
+	void OnDestroy() {
+		EnergySphere.onTaken -= IncrementEnergySphereCount;
+	}
+
 	// Update is called once per frame
 	void Update () {
 
@@ -71,6 +77,7 @@ public class Astra : MonoBehaviour {
 		this.GetComponent<AudioSource> ().PlayOneShot (energyTakenSound);
 		energySphereCounter++;
 		sphereCounter.text = energySphereCounter.ToString ();
+		PlayerPrefs.SetInt ("energy", energySphereCounter);
 	}
 
 	void FixedUpdate() {
@@ -89,7 +96,7 @@ public class Astra : MonoBehaviour {
 				//print ("ASTRA: Elemento " + hit.collider.gameObject.name + " trovato!");
 
 				if (Input.GetMouseButtonDown (0)) {	// MOUSE LEFT CLICK
-					hit.collider.gameObject.transform.FindChild("didascalia").gameObject.SetActive(true);
+					hit.collider.gameObject.transform.FindChild ("didascalia").gameObject.SetActive (true);
 					this.GetComponent<AudioSource> ().PlayOneShot (didascaliaSound);
 				}
 			
@@ -100,20 +107,24 @@ public class Astra : MonoBehaviour {
 
 				if (Input.GetMouseButtonDown (0)) {	// MOUSE LEFT CLICK
 					this.GetComponent<AudioSource> ().PlayOneShot (didascaliaSound);
-					onNAVButtonPressed();
+					onNAVButtonPressed ();
 					lastCheckpoint = this.transform.parent.transform.position;
 				}
 
-			} else if (hit.collider.gameObject.tag == "BottoneMontacarichi"){
+			} else if (hit.collider.gameObject.tag == "BottoneMontacarichi") {
 
 				// Testo per debug
 				//print ("ASTRA: Ho trovato il bottone del montacarichi!");
 
 				if (Input.GetMouseButtonDown (0)) {	// MOUSE LEFT CLICK
 					this.GetComponent<AudioSource> ().PlayOneShot (didascaliaSound);
-					onButtonMontacarichiPressed();
+					onButtonMontacarichiPressed ();
 				}
-
+			} else if (hit.collider.gameObject.tag == "Bombola") {
+				if (Input.GetMouseButton (0)) {
+					this.GetComponent<AudioSource> ().PlayOneShot (didascaliaSound);
+					PlayerPrefs.SetString ("bombola", "found");
+				}
 			}
 		}
 	}

@@ -68,7 +68,7 @@ public class Astra : MonoBehaviour {
 	}
 
 	void OxigenDamage() {
-		currentOxigen -= 10;
+		currentOxigen -= 30;
 		if (currentOxigen < 0)
 			currentOxigen = 0;
 	}

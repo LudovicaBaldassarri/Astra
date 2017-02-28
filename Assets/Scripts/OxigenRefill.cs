@@ -7,7 +7,7 @@ public class OxigenRefill : MonoBehaviour {
 	public delegate void InsideNavAction();
 	public static event InsideNavAction onInsideNav;
 
-	void OnTriggerEnter() {
+	void OnTriggerStay() {
 		onInsideNav ();
 	}
 }

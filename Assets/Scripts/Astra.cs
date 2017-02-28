@@ -15,6 +15,8 @@ public class Astra : MonoBehaviour {
 	public AudioClip didascaliaSound;
 	public AudioClip deathSound;
 
+	public int totaleSfere;
+
 	public delegate void AstraAction();
 	public static event AstraAction onNAVButtonPressed;
 	public static event AstraAction onButtonMontacarichiPressed;
@@ -68,7 +70,7 @@ public class Astra : MonoBehaviour {
 	}
 
 	void OxigenDamage() {
-		currentOxigen -= 30;
+		currentOxigen -= 50;
 		if (currentOxigen < 0)
 			currentOxigen = 0;
 	}
@@ -76,7 +78,7 @@ public class Astra : MonoBehaviour {
 	void IncrementEnergySphereCount() {
 		this.GetComponent<AudioSource> ().PlayOneShot (energyTakenSound);
 		energySphereCounter++;
-		sphereCounter.text = energySphereCounter.ToString ();
+		sphereCounter.text = energySphereCounter.ToString () + " / " + totaleSfere.ToString ();
 		PlayerPrefs.SetInt ("energy", energySphereCounter);
 	}
 
@@ -124,6 +126,7 @@ public class Astra : MonoBehaviour {
 				if (Input.GetMouseButton (0)) {
 					this.GetComponent<AudioSource> ().PlayOneShot (didascaliaSound);
 					PlayerPrefs.SetString ("bombola", "found");
+					hit.collider.gameObject.SetActive (false);
 				}
 			}
 		}

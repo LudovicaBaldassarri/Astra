@@ -7,8 +7,13 @@ public class Nav : MonoBehaviour {
 
 	public AudioClip doorsActionSound;
 
-	private bool closed = true;
-	private bool anim = false;
+	public bool activeAnimation = false;
+	public string astraPosition = "inside";
+	public bool doorsClosed = true;				// Questa potrebbe essere eliminata. Serve solo per il DEBUG
+	public bool buttonPressed = false;
+
+	private bool soundPlaying = false;
+
 	private float degrees = 0;
 
 	private Astra astra;
@@ -19,58 +24,108 @@ public class Nav : MonoBehaviour {
 	}
 
 	void NAVButtonPressed() {
-		anim = true;
+		activeAnimation = true;
+		buttonPressed = true;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (anim) {
 
-			int sign = 1;
+		if (astraPosition == "outside") {
 
-			// FIXME: rendilo framrate independent
-			if (closed) {
-				degrees++;
-				sign = 1;
+			if (buttonPressed) {
+
+				// Porte NAV si chiudono
+				if (closeDoors () == false) {
+					buttonPressed = false;
+					doorsClosed = true;
+				}
+			
 			} else {
-				degrees--;
-				sign = -1;
-			}
+				
+				// Porte NAV si aprono
+				if (openDoors () == false) {
+					doorsClosed = false;
+				}
 
-			// TODO: do the animation here
+			} 
 
-//			for (int i = 0; i < this.transform.childCount - 1; i++) {
-//				if (this.transform.GetChild (i).transform.name == "Nav_portaDx") {
-//					this.transform.GetChild(i).transform.Rotate(new Vector3(0.0f,0.0f,sign*-1f));
-//				} else if (this.transform.GetChild (i).transform.name == "Nav_PortaSx") {
-//					this.transform.GetChild(i).transform.Rotate(new Vector3(0.0f,0.0f,sign*1f));
-//				}
-//			}
-			this.gameObject.transform.FindChild("Nav_portaD").transform.Rotate(new Vector3(0.0f,0.0f,sign*-1f));
-			this.gameObject.transform.FindChild("Nav_portaS").transform.Rotate(new Vector3(0.0f,0.0f,sign*1f));
+		}
+			
 
-			/*
-			this.transform.GetChild(1).transform.Rotate(new Vector3(0.0f,0.0f,sign*-1f));
-			this.transform.GetChild(2).transform.Rotate(new Vector3(0.0f,0.0f,sign*1f));
-			this.transform.GetChild(3).transform.Rotate(new Vector3(0.0f,0.0f,sign*1f));
-			*/
+		if (astraPosition == "inside") {
 
-			if (degrees >= 90 || degrees <= 0) {
-				anim = false;
-				closed = !closed;
+			if (buttonPressed) {
+
+				// Porte NAV ci aprono
+				if (openDoors () == false) {
+					doorsClosed = false;
+				}
+			
+			} else {
+
+				// Porte NAV si chiudono
+				if (closeDoors () == false) {
+					doorsClosed = true;
+				}
+			
 			}
 		}
 	}
 
-	void OnTriggerEnter(Collider collision) {
 
-		if (collision.gameObject.tag == "Player") {
+	// Ritorna false quando l'azione è terminata
+	bool openDoors() {
 
-			// DEBUG
-			//print("Ok il prezzo è giusto!");
+		if (activeAnimation) {
 
-			anim = true;
-			this.GetComponent<AudioSource> ().PlayOneShot (doorsActionSound);
+			if (degrees >= 90) {
+				degrees = 90;
+				activeAnimation = false;
+				soundPlaying = false;
+				return false;
+			}
+
+			if (!soundPlaying) {
+				soundPlaying = true;
+				this.GetComponent<AudioSource> ().PlayOneShot (doorsActionSound);
+			}
+
+
+			degrees++;
+			this.gameObject.transform.FindChild ("Nav_portaD").transform.Rotate (new Vector3 (0.0f, 0.0f, -1f));
+			this.gameObject.transform.FindChild ("Nav_portaS").transform.Rotate (new Vector3 (0.0f, 0.0f, 1f));
 		}
+
+		return true;
+
 	}
+
+	bool closeDoors() {
+
+		if (activeAnimation) {
+
+			if (degrees <= 0) {
+
+				degrees = 0;
+				activeAnimation = false;
+				soundPlaying = false;
+				return false;
+			}
+
+			if (!soundPlaying) {
+				soundPlaying = true;
+				this.GetComponent<AudioSource> ().PlayOneShot (doorsActionSound);
+			}
+
+			degrees--;
+			this.gameObject.transform.FindChild ("Nav_portaD").transform.Rotate (new Vector3 (0.0f, 0.0f, 1f));
+			this.gameObject.transform.FindChild ("Nav_portaS").transform.Rotate (new Vector3 (0.0f, 0.0f, -1f));
+		}
+
+		return true;
+
+
+	}
+
 }

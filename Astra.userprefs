@@ -1,6 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Astra.cs">
+    <Files>
+      <File FileName="Assets/Scripts/OxigenRefill.cs" Line="11" Column="18" />
+      <File FileName="Assets/Scripts/Astra.cs" Line="83" Column="3" />
+      <File FileName="Assets/Scripts/Nav.cs" Line="112" Column="22" />
+      <File FileName="Assets/Scripts/AstraPositionNAV.cs" Line="7" Column="32" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

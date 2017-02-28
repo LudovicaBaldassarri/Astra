@@ -38,7 +38,7 @@ public class TextBoxManagerNonno : MonoBehaviour {
 
 		theText.text = textLines [currentLine];
 
-		if(Input.GetKeyDown(KeyCode.Return)){
+		if(Input.GetKeyDown(KeyCode.Return) || Input.GetMouseButtonDown (0)){
 			currentLine += 1;
 		}
 		if (currentLine >= endAtLine) {

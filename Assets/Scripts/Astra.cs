@@ -11,6 +11,7 @@ public class Astra : MonoBehaviour {
 	public float oxigenLossPerSecond = 0;
 	public Slider oxigenSlider;
 	public Text sphereCounter;
+	public Image selector;
 	public AudioClip energyTakenSound;
 	public AudioClip didascaliaSound;
 	public AudioClip deathSound;
@@ -87,6 +88,8 @@ public class Astra : MonoBehaviour {
 		Ray ray = new Ray (transform.position, transform.forward);
 		Debug.DrawRay (transform.position, transform.forward*10, new Color(255,0,0));
 
+		selector.enabled = false;
+
 		if (Physics.Raycast (ray, out hit, 3.0f)) {
 
 			// DEBUG:
@@ -96,6 +99,7 @@ public class Astra : MonoBehaviour {
 
 				// Testo per debug
 				//print ("ASTRA: Elemento " + hit.collider.gameObject.name + " trovato!");
+				selector.enabled = true;
 
 				if (Input.GetMouseButtonDown (0)) {	// MOUSE LEFT CLICK
 					hit.collider.gameObject.transform.FindChild ("didascalia").gameObject.SetActive (true);
@@ -106,6 +110,7 @@ public class Astra : MonoBehaviour {
 
 				// Testo per debug
 				//print ("ASTRA: Ho trovato il bottone di NAV!");
+				selector.enabled = true;
 
 				if (Input.GetMouseButtonDown (0)) {	// MOUSE LEFT CLICK
 					this.GetComponent<AudioSource> ().PlayOneShot (didascaliaSound);
@@ -117,12 +122,16 @@ public class Astra : MonoBehaviour {
 
 				// Testo per debug
 				//print ("ASTRA: Ho trovato il bottone del montacarichi!");
+				selector.enabled = true;
 
 				if (Input.GetMouseButtonDown (0)) {	// MOUSE LEFT CLICK
 					this.GetComponent<AudioSource> ().PlayOneShot (didascaliaSound);
 					onButtonMontacarichiPressed ();
 				}
 			} else if (hit.collider.gameObject.tag == "Bombola") {
+
+				selector.enabled = true;
+
 				if (Input.GetMouseButton (0)) {
 					this.GetComponent<AudioSource> ().PlayOneShot (didascaliaSound);
 					PlayerPrefs.SetString ("bombola", "found");

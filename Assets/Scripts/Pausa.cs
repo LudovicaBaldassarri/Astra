@@ -22,10 +22,12 @@ public class Pausa : MonoBehaviour {
 		if (isPaused == true) {
 			Time.timeScale = 1;
 			isPaused = false;
+			AudioListener.pause = false;
 			this.transform.FindChild ("Pause").gameObject.SetActive (false);
 		} else {
 			Time.timeScale = 0;
 			isPaused = true;
+			AudioListener.pause = true;
 			this.transform.FindChild ("Pause").gameObject.SetActive (true);
 		}
 	}

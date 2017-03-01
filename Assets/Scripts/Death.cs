@@ -10,6 +10,10 @@ public class Death : MonoBehaviour {
 
 	public AudioClip deathSound;
 
+	void Start() {
+		this.gameObject.AddComponent<AudioSource> ();
+	}
+
 	void OnTriggerEnter(Collider other) {
 
 		if (other.CompareTag ("Player")) {

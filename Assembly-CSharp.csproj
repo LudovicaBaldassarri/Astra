@@ -68,7 +68,6 @@
      <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\OxigenRefill.cs" />
      <Compile Include="Assets\Scripts\Pausa.cs" />
-     <Compile Include="Assets\Scripts\PlayVideo.cs" />
      <Compile Include="Assets\Scripts\SoundEffectCollider.cs" />
      <Compile Include="Assets\Scripts\TextBoxManagerNav.cs" />
      <Compile Include="Assets\Scripts\TextBoxManagerNonno.cs" />

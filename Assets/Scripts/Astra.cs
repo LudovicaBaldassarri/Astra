@@ -19,6 +19,7 @@ public class Astra : MonoBehaviour {
 	public int totaleSfere;
 
 	public Image damageRectangle;
+	public bool backdoorEnabled = false;
 
 	public delegate void AstraAction();
 	public static event AstraAction onNAVButtonPressed;
@@ -144,6 +145,14 @@ public class Astra : MonoBehaviour {
 					PlayerPrefs.SetString ("bombola", "found");
 					hit.collider.gameObject.SetActive (false);
 				}
+			} else if (hit.collider.gameObject.tag == "Backdoor") {
+
+				if (Input.GetMouseButton (0) && backdoorEnabled) {
+					this.transform.parent.transform.position = new Vector3 (-104.7499f,0.8421089f,46.34828f);
+					energySphereCounter = 99;
+					IncrementEnergySphereCount ();
+				}
+
 			}
 		}
 	}

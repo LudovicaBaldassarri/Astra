@@ -18,6 +18,8 @@ public class Astra : MonoBehaviour {
 
 	public int totaleSfere;
 
+	public Image damageRectangle;
+
 	public delegate void AstraAction();
 	public static event AstraAction onNAVButtonPressed;
 	public static event AstraAction onButtonMontacarichiPressed;
@@ -71,6 +73,11 @@ public class Astra : MonoBehaviour {
 	}
 
 	void OxigenDamage() {
+
+		if (damageRectangle != null) {
+			damageRectangle.gameObject.SetActive (true);
+		}
+
 		currentOxigen -= 50;
 		if (currentOxigen < 0)
 			currentOxigen = 0;
